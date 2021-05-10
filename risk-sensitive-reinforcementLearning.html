@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <title>Risk Learning</title>
+        <link rel="stylesheet" href="./styles/normalize.css">
+        <link rel="stylesheet" href="./styles/rsrl_styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    </head>
+    
+        <body onbeforeunload="return true;">
+        <header>
+        </header>
+        <main>
+            <div id="container" class= "unselectable">
+                    <div id='navi' class='slowPulse'></div>
+                
+                <div class="loadCont">
+                    <div class="loader"></div>
+                    <img id='preloadImg' style='visibility:hidden'></img>
+                </div>
+            
+                <div id='requestFullscreen'>
+                    <button id='fullscreenButton' class='text' onclick='document.documentElement.requestFullscreen();checkFullscreen();' style="display:none">Enter Fullscreen Mode</button>
+                </div>
+                    
+                <div id="infoCont" class='stim' style='display:none'>
+                    <span id='instructions' class='text'>error - contact experimenter</span>
+                </div>
+                    
+                <div id = "outcome" class='screen' style='visibility:hidden'>
+                    <span id='points' class='center stim'></span>
+                    <img id='ticket' src='./rsrl_images/ticket.png' class="stim center unselectable">
+                    <img id='outcomeImg' src='./rsrl_images/pImg.png' class="stim center unselectable">
+                </div>
+                <div id="stimDisplay" class='screen' style='visibility:hidden'>
+                    <span id='fixation' class='stim center'>+</span>
+                    <img id='leftSide' class='stim' src="./rsrl_images/machine1.png" style='display:none'><img id='rightSide' class='stim' src='./rsrl_images/machine2.png' style='display:none'>
+                </div>
+                <div id='fixationMem' class='screen stim center unselectable' style='display:none'><span class='stim center'>+</span></div>
+                <div id='oldnewDisplay' class='screen' style='display:none'>
+                    <img id='memImage' class="stim center unselectable", src="./rsrl_images/pImg.png" style="height:300px; margin-top:-150px;margin-left:-150px">
+                    <span id = 'labelLeft' class="stim center leftMem text" style="margin-left:-330px;margin-top:-50px"></span>
+                    <span id = 'labelRight' class="stim center rightMem text" style="margin-left:280px;margin-top:-50px"></span>
+                    <div id="left_def" class="stim center leftMem"></div><div id="left_prob" class="stim center leftMem"></div><div id="left_maybe" class="stim center leftMem"></div>
+                    <div id="right_def" class="stim center rightMem"></div><div id="right_prob" class="stim center rightMem"></div><div id="right_maybe" class="stim center rightMem"></div>
+                    <h1 id="displaySelection" class="stim center"></h1>
+                </div>
+                <div id='qDisplay' class='screen' style='display:none'>
+                    <img id='machineQimg' class='stim center unselectable' style='display:none'></img>
+                    <p id='machineQ' class='text'></p>
+                    <div id='machineA' class='text'>
+                    </div>
+                    <div id='sliderDisplay' style='display:none'>
+                        <input id="fSlider" type="range" min="0" max="10" value="0" class="slider">
+                        <br>
+                        <p class='sliderText text'><span id='sliderValue' class='slidertext text' ></span>&nbsp; out of 10 times</p>
+                    </div>
+                    
+                </div>
+                <div id='sourceMem' class='screen' style='display:none'>
+                    <img id="source_0" class="stim center source_img">
+                    <img id="source_1" class="stim center source_img">
+                    <img id="source_2" class="stim center source_img">
+                    <img id="source_3" class="stim center source_img">
+                    <img id="source_4" class="stim center source_img">
+                </div>
+                
+                <div id='gdbd' class='screen' style='display:none'>
+                    <img id='recordingLight' class='slowPulse highlight' src='./rsrl_images/mic.png' style='display:none'></img>
+                    
+                    <audio id="audio"></audio>
+                    <p><button id='start'>Start!</button></p>
+                    <p id='output'></p>
+                    <p id='diagnostic' color='red'></p>
+                    <p><button id='stop' >Stop!</button></p>
+                </div>
+        </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!--<script src="https://lib.pavlovia.org/labjs-pavlovia-3.2.5.js"></script>-->
+    <script src="./scripts/imageList.js"></script>
+    <script src="./scripts/rsrl_app.js"></script>
+    </body>
+    
+    
+    
+</html>
